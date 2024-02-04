@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------- header内 --------*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6da9a0;
+    background-color: #edefbb;
+}
+
+.header-left {
+    flex: 1;
+}
+.username {
+    padding-left: 10px;
+}
+
+.header-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo {
+    font-size: 36px;    
+}
+
+.header-right {
+    flex: 1;
+    text-align: right;
+}
+.menus li {
+    list-style: none;
+    padding-right: 10px;
+}

@@ -1,0 +1,41 @@
+/*--------- date内 ---------------*/
+.date {
+    margin: 25px auto 25px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.today {
+    width: 200px;
+    text-align: center;
+    
+}
+
+/*-------- timer内 ----------*/
+h3 {
+    text-align: center;
+}
+
+.timer {
+    border: solid black 2px;
+    padding: 20px 20px;
+    font-size: 20px;
+    margin: 25px 300px 25px 300px;
+    text-align: right;
+}
+
+
+/*-------- btn-container内 ----------*/
+.btn-container {
+    margin: 25px 80px 25px 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn {
+    width: 45%;
+    box-sizing: border-box;
+    margin: 10px auto 10px auto;
+    border: solid black 2px;
+    text-align: center;
+}

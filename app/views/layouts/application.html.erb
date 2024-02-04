@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LearnLog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "main", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <div class=header-left>
+        <div class="username">
+          ユーザー名（ログイン時表示）
+        </div>
+      </div>
+      <div class="header-center">
+        <div class="logo"> 
+          <%= link_to("LearnLog", "/") %>
+          <%# ↑ロゴ画像に置き換えたい %>
+        </div>
+      </div>
+      <div class="header-right">
+        <ul class="menus">
+            <li>
+              LearnLogとは
+            </li>
+            <li>
+              ログイン（ログアウト時表示）
+            </li>
+            <li>
+              過去履歴一覧（ログイン時表示）
+            </li>
+            <li>
+              ログアウト（ログイン時表示）
+            </li>
+        </ul>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
