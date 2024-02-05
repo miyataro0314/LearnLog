@@ -36,7 +36,7 @@ Things you may want to cover:
 【使用Model】
 User(id,name,password_digest)
 　ユーザー管理
-Time(id,start,finish,user_id)
+Time(id,begin_at,end_at,user_id)
 　学習ログ管理
 Target(id,target,user_id)
 　週の学習時間目標

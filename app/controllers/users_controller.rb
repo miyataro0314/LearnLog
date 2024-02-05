@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         #セキュリティ上、User.new(params[:user])で丸々渡すのはアウト。ストロングパラメータを使用して実装する。
         raise
         user.save
-        redirect_to("/")
+        redirect_to("/") #仮URL
     end
 
     private
