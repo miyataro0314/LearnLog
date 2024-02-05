@@ -1,5 +1,21 @@
 <h1>新規登録</h1>
-
-<%= render "form", user:@user %>
-<!--ローカル変数を渡す場合には、変数名:@変数を追加-->
-
+<div><%= flash[:alert] %></div>
+<%= form_with(model: @user, local: true) do |form| %>
+<!--Userのインスタンス@userに紐づけ。インスタンスの中身の有無によってcreateかupdateか自動振り分け-->
+    <div>
+        <%= form.label :name, "名前", style: "display: block" %>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :password, "パスワード", style: "display: block" %>
+        <%= form.text_field :password %>
+    </div>
+    <div>
+        <%= form.label :password_confirmation, "確認用パスワード", style: "display: block" %>
+        <%= form.text_field :password_confirmation %>
+    </div>
+    <div>
+        <%= form.submit "登録" %>
+        <!--インスタンスが空ならcreateへ、そうでなければupdateへ-->
+    </div>
+<% end %>
