@@ -1,0 +1,15 @@
+<%= form_with(model:user) do |form| %>
+<!--Userモデルに紐づいたパーシャル。インスタンスの中身の有無によってcreateかupdateか自動振り分け-->
+    <div>
+        <%= form.label :name, "名前", style: "display: block" %>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :password_digest, "パスワード", style: "display: block" %>
+        <%= form.text_field :password_digest %>
+    </div>
+    <div>
+        <%= form.submit "登録" %>
+        <!--インスタンスが空ならcreateへ、そうでなければupdateへ-->
+    </div>
+<% end %>
