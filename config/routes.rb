@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :times
+  resource :logins, only: :new
 
   get "up" => "rails/health#show", as: :rails_health_check 
   #ヘルスチェック用ルーティング　残す 
