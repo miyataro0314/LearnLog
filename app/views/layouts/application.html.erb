@@ -28,21 +28,24 @@
             <li>
               LearnLogとは
             </li>
-            <li>
-              <%= link_to("ログイン（ログアウト時表示）", new_session_path) %>
-            </li>
-            <li>
-              <%= link_to("新規登録（ログアウト時表示）", new_user_path) %>
-            </li>
-            <li>
-              計測する（ログイン時表示）
-            </li>
-            <li>
-              過去履歴一覧（ログイン時表示）
-            </li>
-            <li>
-              ログアウト（ログイン時表示）
-            </li>
+            <% if session[:user_id] %>
+              <li>
+                計測する（ログイン時表示）
+              </li>
+              <li>
+                過去履歴一覧（ログイン時表示）
+              </li>
+              <li>
+                <%= link_to("ログアウト", logout_path, data:{turbo_method: :delete, turbo_confirm: "ログアウトしてよろしいですか？"}) %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to("ログイン", login_path) %>
+              </li>
+              <li>
+                <%= link_to("新規登録", new_user_path) %>
+              </li>
+            <% end %>
         </ul>
       </div>
     </header>

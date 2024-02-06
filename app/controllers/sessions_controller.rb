@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         user = User.find_by(name: params[:name])
         if user && user.authenticate(params[:password])
             log_in(user)
-            flash[:notice] = "ログインに成功しました"
+            flash[:notice] = "ログインしました"
             redirect_to("/")
         else
             flash.now[:alert] = "ログインに失敗しました"
@@ -20,6 +20,9 @@ class SessionsController < ApplicationController
 
     def destroy
         #ログアウト処理用
+        log_out()
+        flash[:notice] = "ログアウトしました"
+        redirect_to("/")
     end
 
 end

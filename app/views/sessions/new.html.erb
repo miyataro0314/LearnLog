@@ -1,7 +1,7 @@
 <!--ログインページ-->
 <h1>ログイン</h1>
 <div><%= flash[:alert] %></div>
-<%= form_with url: sessions_path do |form| %>
+<%= form_with url: login_path do |form| %>
 
     <div>
         <%= form.label :name, "名前", style: "display: block" %>
