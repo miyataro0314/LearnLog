@@ -13,8 +13,8 @@
 ActiveRecord::Schema[7.1].define(version: 2024_02_06_065939) do
   create_table "measurements", force: :cascade do |t|
     t.date "date"
-    t.time "begin_at"
-    t.time "end_at"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

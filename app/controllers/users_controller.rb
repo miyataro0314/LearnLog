@@ -14,13 +14,12 @@ class UsersController < ApplicationController
                 flash[:notice] = "登録に成功しました"
                 redirect_to("/") #仮URL
             else
-                flash[:alert] = "登録に失敗しました"
-                redirect_to new_user_path
+                flash.now[:alert] = "登録に失敗しました"
+                render "new", status: 422
             end
         else
             flash.now[:alert] = "パスワードが一致しません"
-            render "new", status: :unprocessable_entity
-            # redirect_to new_user_path
+            render "new", status: 422
         end
     end
 

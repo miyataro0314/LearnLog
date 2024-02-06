@@ -14,31 +14,33 @@
     <header>
       <div class=header-left>
         <div class="username">
-          ユーザー名（ログイン時表示）
+          <%if @current_user%>
+            ログインユーザー：<%= @current_user.name %>
+          <% end %>
         </div>
       </div>
       <div class="header-center">
         <div class="logo"> 
-          <%= link_to("LearnLog", "/") %>
+          <%= link_to("LearnLog", top_path ) %>
           <%# ↑ロゴ画像に置き換えたい %>
         </div>
       </div>
       <div class="header-right">
         <ul class="menus">
-            <li>
-              LearnLogとは
-            </li>
-            <% if session[:user_id] %>
+            <% if @current_user %>
               <li>
-                計測する（ログイン時表示）
+                <%= link_to("計測する", new_measurement_path) %>
               </li>
               <li>
-                過去履歴一覧（ログイン時表示）
+                <%= link_to("一覧", measurements_path) %>
               </li>
               <li>
                 <%= link_to("ログアウト", logout_path, data:{turbo_method: :delete, turbo_confirm: "ログアウトしてよろしいですか？"}) %>
               </li>
             <% else %>
+              <li>
+                <%= link_to("LearnLogとは", about_path) %>
+              </li>
               <li>
                 <%= link_to("ログイン", login_path) %>
               </li>

@@ -1,0 +1,8 @@
+<h1>計測</h1>
+<div><%= flash[:notice] %></div>
+<div>
+    <%= link_to("開始", start_path, data: {turbo_method: :post})%>
+</div>
+<div>
+    <%= link_to("終了", end_path, data: {turbo_method: :post})%>
+</div>

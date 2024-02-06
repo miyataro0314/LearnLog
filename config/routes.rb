@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
-  get '/' => "main#learnlog"
+  get '/', to: "main#top", as:"top"
+  get "/about", to: "main#about", as: "about"
 
   resources :users
-  resources :times
 
-  get "/measurement", to: "measurements#new", as: :new_times
-  post "/measurement/begin", to: "measurements#begin", as: :begin_times
-  post "/measurement/end", to: "measurements#end", as: :end_times
+  get "/measurements", to: "measurements#new", as: "new_measurement"
+  get "/measurements/index", to: "measurements#index", as: "measurements"
+  get "/measurements/:id", to: "measurements#show", as: "measurement"
+  get "measurements/:id/edit", to: "measurements#edit", as: "edit_measurement"
+  patch "measurements/:id", to: "measurements#update"
+  delete "measurements/:id", to: "measurements#destroy"
+  post "/measurements/start", to: "measurements#start", as: "start"
+  post "/measurements/end", to: "measurements#end", as: "end"
+
   
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

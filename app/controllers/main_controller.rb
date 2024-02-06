@@ -1,4 +1,4 @@
 class MainController < ApplicationController
-  def learnlog
+  def top
   end
 end

@@ -1,0 +1,9 @@
+<h1>詳細</h1>
+
+<div>ID:<%= @measurement.id %></div>
+<div>開始日時：<%= @measurement.start_at %></div>
+<div>終了日時：<%= @measurement.end_at %></div>
+<div><%= link_to("編集", edit_measurement_path(@measurement), data: {turbo_method: :patch}) %></div>
+<div><%= link_to("削除", measurement_path(@measurement), data: {turbo_method: :delete, turbo_confirm: "本当に削除してよろしいですか？"}) %></div>
+<br>
+<div><%= link_to("一覧に戻る", measurements_path) %></div>
