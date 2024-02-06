@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :users
   resources :times
 
-  get "/measure", to: "times#new", as: :new_times
-  post "/measure/begin", to: "times#begin", as: :begin_times
-  post "/measure/end", to: "times#end", as: :end_times
+  get "/measurement", to: "measurements#new", as: :new_times
+  post "/measurement/begin", to: "measurements#begin", as: :begin_times
+  post "/measurement/end", to: "measurements#end", as: :end_times
   
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
