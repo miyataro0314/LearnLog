@@ -7,12 +7,14 @@
     
 <div class=>
     <%= flash[:notice] %>
-    <h3>
-        今日の勉強時間
-    </h3>
-    <div class="timer">
-        合計時間   〇〇時間〇〇分
-    </div>
+    <% if @current_user %>
+        <h3>
+            本日の勉強時間
+        </h3>
+        <div class="timer">
+            合計時間  <%= @hours %>時間  <%= @minuits %>分
+        </div>
+    <% end %>
 </div>
 
 <div class="btn-container">

@@ -1,0 +1,19 @@
+<h1>編集</h1>
+<%= flash[:notice] %>
+<%= form_with(model: @measurement) do |form| %>
+    <div>
+        <%= form.label :date, "登録日", style: "display: block" %>
+        <%= form.date_field :date %>
+    </div>
+    <div>
+        <%= form.label :start_at, "開始時刻", style: "display: block" %>
+        <%= form.time_field :start_at %>
+    </div>
+    <div>
+        <%= form.label :end_at, "終了時刻", style: "display: block" %>
+        <%= form.time_field :end_at %>
+    </div>
+    <div>
+        <%= form.submit "登録" %>
+    </div>
+<% end %>

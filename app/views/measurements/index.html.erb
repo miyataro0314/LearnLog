@@ -1,8 +1,9 @@
 <h1>一覧</h1>
-
+<%= flash[:notice] %>
 <div>
     <% @measurements.each do |measurement|%>
     <div>ID:<%= measurement.id %></div>
+    <div><%= measurement.date %></div>
     <div>開始日時：<%= measurement.start_at %></div>
     <div>終了日時：<%= measurement.end_at %></div>
     <div><%= link_to("詳細", measurement_path(measurement)) %></div>
