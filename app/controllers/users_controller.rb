@@ -7,10 +7,10 @@ class UsersController < ApplicationController
 
     #post "/users"
     def create
-        user = User.new(user_params)
+        @user = User.new(user_params)
         #セキュリティ上、User.new(params[:user])で丸々渡すのはアウト。ストロングパラメータを使用して実装する。
         if params[:user][:password] == params[:user][:password_confirmation]
-            if user.save
+            if @user.save
                 flash[:notice] = "登録に成功しました"
                 redirect_to("/") #仮URL
             else

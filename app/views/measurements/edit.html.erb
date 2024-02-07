@@ -1,5 +1,8 @@
 <h1>編集</h1>
+
 <%= flash[:notice] %>
+<%= render "layouts/error_messages", object: @measurement %>
+
 <%= form_with(model: @measurement) do |form| %>
     <div>
         <%= form.label :date, "登録日", style: "display: block" %>
